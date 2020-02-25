@@ -24,7 +24,7 @@ class UsersController < ApplicationController
       current_user.followings.create({:user_id => params[:user_id]})
       flash[:success] = "Successfully followed"
     else
-      flash[:alert] = "Already followed"
+      flash[:alert] = "Already following."
     end
     redirect_to all_users_path
   end

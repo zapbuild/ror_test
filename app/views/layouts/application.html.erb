@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RorTest</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <% if current_user.present? %>
+    <div>
+     <span><%= current_user.email %></span> <%= link_to("Log out" ,destroy_user_session_path,:method=>:delete) %>
+    </div>
+  <div>=============================================================================================</div>
+  <% end %>
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+      <%= msg %>
+    </div>
+  <% end %>
+
+    <%= yield %>
+
+  </body>
+</html>

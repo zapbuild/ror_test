@@ -1,0 +1,5 @@
+<%= form_for(@tweets ,:method=>:post) do |f| %>
+  <%= f.text_field :title,:title=>"Title",:placeholder=>"Please enter title" %>
+  <%= f.text_area :content,:title=>"Content",:placeholder=>"Please enter content" %>
+  <%= f.submit :tweet,:title=>"Title" %>
+<% end %>

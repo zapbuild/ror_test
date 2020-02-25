@@ -1,0 +1,9 @@
+<% if @my_tweets.present? %>
+  <%@my_tweets.each do |tweet| %>
+    <div>
+      <h5><%= tweet.title %></h5>
+      <p><%= tweet.content %></p>
+      <p> Author : <%= tweet.user.email %> <%= link_to("View Profile",profile_path(:user_id=>tweet.user_id)) %></p>
+    </div>
+  <% end %>
+<% end %>

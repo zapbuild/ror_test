@@ -1,0 +1,8 @@
+<div>Followings of <%= @user.email %></div>
+<% if @followings.present? %>
+  <%@followings.each do |following| %>
+    <div>
+      <p> <%= following.user.email %></p>
+    </div>
+  <% end %>
+<% end %>

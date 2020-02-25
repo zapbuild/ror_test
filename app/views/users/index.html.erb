@@ -1,7 +1,13 @@
 <% if @users.present? %>
-  <%@users.each do |user| %>
+  <% @users.each do |user| %>
     <div>
-      <p> <%= user.email %><span><%= link_to("follow" ,follow_path(:user_id=>user.id),:method=>:post) %></span></p>
+      <p> <%= user.email %>
+        <% if @followings.include?(user.id) %>
+          <span><%= link_to("unfollow", unfollow_path(:user_id => user.id), :method => :post) %></span>
+        <% else %>
+          <span><%= link_to("follow", follow_path(:user_id => user.id), :method => :post) %></span>
+        <% end %>
+      </p>
     </div>
   <% end %>
 <% end %>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/see_tweets" => "tweets#my_tweets",:as=>:my_tweets
   get "/all_users" => "users#index",:as=>:all_users
   post "/follow/:user_id"=>"users#follow",:as=>:follow
+  post "/unfollow/:user_id"=>"users#unfollow",:as=>:unfollow
   get "/followers/:user_id"=>"users#followers",:as=>:followers
   get "/followings/:user_id"=>"users#followings",:as=>:followings
   get "/profile/:user_id"=>"users#profile",:as=>:profile
